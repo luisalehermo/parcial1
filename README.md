@@ -29,15 +29,17 @@ Revision #1 */
 using namespace std;
 main(){
 	
-	int i,cont;  cont=0;
-	
+	int i,cont; cont=0;
+	//Cilo que va recorriendo los numeros que van desde 50.000 hasta encontrar los 20 primeros numeros que cumplan las 3 condiciones
 	for(i=50000;cont<20;i++){
-		if(i%4==0 && i%6==0){
-		 	if(fmod(sqrt(i),10)==4){ 
-			 cout<<i/4<<"-"<<i/6<<"-"<<sqrt(i)<<endl;
-		    }
+		if((i%4)==0){ //Numeros que sean exactamane divisbles entre 4
+			if((i%6)==0){//Numeros que sean exactamente divisibles entre 6
+				if(fmod(sqrt(i),10)==4){ //Numeros cuya raiz exacta termine en 4
+					cont++;
+					cout<<i<<"-"<<i/4<<"-"<<i/6<<"-"<<sqrt(i)<<endl;
+				}
+			}
 		}
-		cont++;
-	}	
+	}
 	return 0;
 }
